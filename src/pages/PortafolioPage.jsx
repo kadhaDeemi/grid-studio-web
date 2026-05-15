@@ -7,7 +7,7 @@ import imgMechada from '../assets/Mechada-Chilena.png';
 import imgTeqMed from '../assets/TeqMed.jpeg';
 import imgTerapia from '../assets/Terapia-Ocupacional.jpeg';
 import imgSDC from '../assets/SDC-Producciones.png';
-import imgTo from '../assets/ToScarlet.png';
+import imgTo from '../assets/Toscarlet.png';
 import imgJac from '../assets/Jac.jpeg';
 import imgComunnityQ from '../assets/ComunnityQmed.png';
 import imgDog from '../assets/DogTrainer-AI.png';
