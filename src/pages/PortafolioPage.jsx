@@ -141,15 +141,8 @@ const PortfolioPage = () => {
 
         <div className="flex overflow-x-auto md:flex-wrap md:justify-center gap-3 mb-16 pb-4 scrollbar-hide snap-x">
           {categories.map((category) => (
-            <button 
-              key={category} 
-              onClick={() => setActiveFilter(category)} 
-              className={`snap-start whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 flex-shrink-0 ${
-                activeFilter === category
-                  ? 'bg-gray-900 text-white shadow-lg'
-                  : 'bg-white text-gray-600 border border-gray-200 hover:border-gray-900 hover:text-gray-900' 
-              }`}
-            >
+            <button key={category} onClick={() => setActiveFilter(category)} className={`snap-start whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 flex-shrink-0 ${
+                activeFilter === category ? 'bg-gray-900 text-white shadow-lg': 'bg-white text-gray-600 border border-gray-200 hover:border-gray-900 hover:text-gray-900' }`}>
               {category}
             </button>
           ))}
@@ -157,17 +150,10 @@ const PortfolioPage = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project) => (
-            <div 
-              key={project.id} 
-              className="group relative rounded-[2rem] overflow-hidden block w-full text-left h-[350px] shadow-sm hover:shadow-xl transition-all duration-500 cursor-default"
-            >
-              <div 
-                className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 md:group-hover:scale-105" 
-                style={{ backgroundImage: project.image ? `url(${project.image})` : 'linear-gradient(to bottom right, #4f46e5, #ec4899)'}}
-              >
+            <div key={project.id} className="group relative rounded-[2rem] overflow-hidden block w-full text-left h-[350px] shadow-sm hover:shadow-xl transition-all duration-500 cursor-default">
+              <div className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 md:group-hover:scale-105" style={{ backgroundImage: project.image ? `url(${project.image})` : 'linear-gradient(to bottom right, #4f46e5, #ec4899)'}}>
                 {!project.image && <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]"></div>}
               </div>
-              
               <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-900/60 to-transparent opacity-90 md:opacity-80 transition-opacity duration-300 md:group-hover:opacity-95"></div>
               
               {/* Contenido Superior */}
@@ -182,37 +168,20 @@ const PortfolioPage = () => {
                   {project.title}
                 </h3>
               </div>
-
-              {/* Botones Inferiores: ¡Siempre visibles en móvil (opacity-100), se ocultan en escritorio hasta el hover (md:opacity-0)! */}
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 translate-y-0 opacity-100 md:translate-y-8 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 transition-all duration-500 flex flex-wrap gap-2 md:gap-3">
                 
-                <button 
-                  onClick={() => setSelectedProject(project)}
-                  className="flex-1 bg-white/10 backdrop-blur-md hover:bg-white text-white hover:text-gray-900 border border-white/20 text-xs md:text-sm font-bold py-3 px-3 md:px-4 rounded-xl transition-colors flex items-center justify-center gap-2"
-                >
+                <button onClick={() => setSelectedProject(project)} className="flex-1 bg-white/10 backdrop-blur-md hover:bg-white text-white hover:text-gray-900 border border-white/20 text-xs md:text-sm font-bold py-3 px-3 md:px-4 rounded-xl transition-colors flex items-center justify-center gap-2">
                   Info <LayoutGrid className="w-4 h-4" />
                 </button>
 
                 {project.demoUrl && (
-                  <a 
-                    href={project.demoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()} 
-                    className="flex-1 bg-blue-600 hover:bg-blue-500 text-white text-xs md:text-sm font-bold py-3 px-3 md:px-4 rounded-xl transition-colors flex items-center justify-center gap-2"
-                  >
+                  <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="flex-1 bg-blue-600 hover:bg-blue-500 text-white text-xs md:text-sm font-bold py-3 px-3 md:px-4 rounded-xl transition-colors flex items-center justify-center gap-2">
                     Web <ExternalLink className="w-4 h-4" />
                   </a>
                 )}
 
                 {project.igUrl && (
-                  <a 
-                    href={project.igUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()} 
-                    className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-90 text-white text-xs md:text-sm font-bold py-3 px-3 md:px-4 rounded-xl transition-opacity flex items-center justify-center gap-2"
-                  >
+                  <a href={project.igUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-90 text-white text-xs md:text-sm font-bold py-3 px-3 md:px-4 rounded-xl transition-opacity flex items-center justify-center gap-2">
                     Post <InstagramIcon className="w-4 h-4" />
                   </a>
                 )}
@@ -229,7 +198,7 @@ const PortfolioPage = () => {
           </Link>
         </div>
 
-        {/* --- MODAL INTERACTIVO --- */}
+        {/* Modal */}
         {selectedProject && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8">
             <div className="absolute inset-0 bg-gray-950/80 backdrop-blur-sm cursor-pointer transition-opacity" onClick={() => setSelectedProject(null)}></div>
