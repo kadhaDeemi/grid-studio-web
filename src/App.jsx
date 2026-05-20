@@ -9,10 +9,12 @@ import WebServices from './pages/WebServices';
 import CreativeStudioPage from './pages/CreativeStudioPage';
 import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen flex flex-col font-sans">
         
         <Navbar />

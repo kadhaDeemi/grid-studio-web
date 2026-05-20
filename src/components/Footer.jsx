@@ -67,8 +67,8 @@ const Footer = () => {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-gray-500 shrink-0" />
-                <a href="mailto:kadhaDeemi.developer@gmail.com" className="hover:text-white transition-colors">
-                  kadhaDeemi.developer@gmail.com
+                <a href="mailto:gridstudio.dev@gmail.com" className="hover:text-white transition-colors">
+                  gridstudio.dev@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3">

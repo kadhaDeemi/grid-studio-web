@@ -22,15 +22,15 @@ const Contact = () => {
 
     try {
       await emailjs.send(
-        'service_zw77b8v',
-        'template_oncw70n',
+        'service_eg1azpl',
+        'template_cmodgfu',
         {
           name: formData.name,
           email: formData.email,
           service: formData.service,
           message: formData.message,
         },
-        'FxrdbY3yZGpsfbmoJ'
+        'd40vPjgw__axuQ8cu'
       );
 
       alert('¡Mensaje enviado con éxito! Te contactaremos a la brevedad.');
@@ -71,7 +71,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">Email</p>
-                    <p className="font-medium group-hover:text-blue-400 transition-colors">kadhadeemi.developer@gmail.com</p>
+                    <p className="font-medium group-hover:text-blue-400 transition-colors">gridstudio.dev@gmail.com</p>
                   </div>
                 </a>
 
